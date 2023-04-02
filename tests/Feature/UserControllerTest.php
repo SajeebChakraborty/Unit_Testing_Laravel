@@ -19,4 +19,15 @@ class UserControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testUserControllerIndex()
+    {
+
+        $response = $this->get('/users');
+
+        $response->assertStatus(200);
+        $response->assertViewIs('users.index');
+        
+    }
+
 }
